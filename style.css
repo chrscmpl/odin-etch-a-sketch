@@ -1,0 +1,76 @@
+@font-face {
+	font-family: 'zyzol';
+	src: url(./resources/zyzol-font/Zyzol-Wyd3n.otf);
+}
+
+body {
+	height: 100vh;
+	margin: 0px;
+	background-color: aquamarine;
+	font-family: 'zyzol', sans-serif, Arial, Helvetica;
+}
+
+#homepage {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#frame {
+	height: 900px;
+	width: 900px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	background-color: red;
+	border: 5px solid black;
+	border-radius: 5%;
+}
+
+#grid {
+	height: 80%;
+	width: 80%;
+	background-color: black;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	padding: 0;
+	border: 3px solid black;
+}
+
+.square {
+	height: 6.25%;
+	width: 6.25%;
+	box-sizing: border-box;
+	margin: 0%;
+	background-color: white;
+	border: 1px solid black;
+}
+
+#squares-input-container {
+	display: flex;
+	margin: 3% 0%;
+	justify-content: center;
+	align-items: center;
+	gap: 2px;
+}
+
+#squares-input-label {
+	font-size: 30px;
+	font-weight: 900;
+	color: white;
+	-webkit-text-stroke: 1px black;
+	white-space: nowrap;
+}
+
+#squares-input {
+	width: 16%;
+	background-color: rgb(79, 0, 0);
+	color: white;
+	font-size: 30px;
+	font-weight: 900;
+	-webkit-text-stroke: 1px black;
+}
