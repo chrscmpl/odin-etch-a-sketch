@@ -101,6 +101,11 @@ body {
 	width: 20px;
 	height: 20px;
 	border: 2px solid black;
+	background-size: cover;
+}
+
+.picked {
+	background-image: url(./resources/cross.png);
 }
 
 #color-picker {

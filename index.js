@@ -1,7 +1,16 @@
-const grid = document.querySelector('#grid');
-const squaresInput = document.querySelector('#squares-input');
 const InternalCSS = document.createElement('style');
 document.head.appendChild(InternalCSS);
+const grid = document.querySelector('#grid');
+const squaresInput = document.querySelector('#squares-input');
+const colorPicker = document.querySelector('#color-picker');
+const colorButtons = document.querySelectorAll('.color-button');
+let currentColor = '#000000';
+
+init();
+
+//////////////////////////////////////////////////////////////////////
+//EVENT LISTENERS////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 // event listener that calls the drawGrid function after the number input is changed
 squaresInput.addEventListener('change', e => {
@@ -10,7 +19,28 @@ squaresInput.addEventListener('change', e => {
 	drawGrid(+e.target.value);
 });
 
-drawGrid(squaresInput.value); // fill when the page is loaded
+// event listener that changes the currently selected color
+// and invokes the function to display the currently selected
+// button when a button is clicked
+colorButtons.forEach(btn =>
+	btn.addEventListener('click', e => {
+		currentColor = e.target.value;
+		showSelectedButton(
+			e.target.id === 'color-picker' ? e.target.parentElement : e.target
+		);
+	})
+);
+
+// event listener that changes the currently selected color and
+// picker button background color when a new color is picked
+colorPicker.addEventListener('change', e => {
+	currentColor = e.target.value;
+	changePickColorBackground(e.target.value);
+});
+
+//////////////////////////////////////////////////////////////////////
+//FUNCTION DECLARATIONS//////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 // takes the number of squares per side as a parameter,
 // calls resizeSquares() with the correct percentage to fill the grid completely
@@ -33,4 +63,22 @@ function fillGrid(n) {
 		square.classList.add('square');
 		grid.appendChild(square);
 	}
+}
+
+// changes the background color of the pickColor button
+function changePickColorBackground(color) {
+	const btn = document.querySelector('#pick-color-button');
+	btn.style.backgroundColor = color;
+}
+
+// gives the selected button the class picked
+function showSelectedButton(btn) {
+	colorButtons.forEach(Element => Element.classList.remove('picked'));
+	btn.classList.add('picked');
+}
+
+// initialize page when loaded
+function init() {
+	drawGrid(squaresInput.value);
+	changePickColorBackground(colorPicker.value);
 }
