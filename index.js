@@ -3,7 +3,12 @@ const squaresInput = document.querySelector('#squares-input');
 const squaresStyle = document.createElement('style');
 document.head.appendChild(squaresStyle);
 
-squaresInput.addEventListener('change', e => drawGrid(e.target.value));
+// event listener that calls the drawGrid function after the number input is changed
+squaresInput.addEventListener('change', e => {
+	if (e.target.value > e.target.max) e.target.value = e.target.max;
+	if (e.target.value < e.target.min) e.target.value = e.target.min;
+	drawGrid(e.target.value);
+});
 
 drawGrid(squaresInput.value); // fill when the page is loaded
 
