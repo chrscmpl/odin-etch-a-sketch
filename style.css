@@ -6,7 +6,7 @@
 body {
 	height: 100vh;
 	margin: 0px;
-	background-color: aquamarine;
+	background: radial-gradient(aquamarine 60%, rgb(0, 224, 150));
 	font-family: 'zyzol', sans-serif, Arial, Helvetica;
 }
 
