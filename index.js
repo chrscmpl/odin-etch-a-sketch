@@ -1,7 +1,7 @@
 const grid = document.querySelector('#grid');
 const squaresInput = document.querySelector('#squares-input');
-const squaresStyle = document.createElement('style');
-document.head.appendChild(squaresStyle);
+const InternalCSS = document.createElement('style');
+document.head.appendChild(InternalCSS);
 
 // event listener that calls the drawGrid function after the number input is changed
 squaresInput.addEventListener('change', e => {
@@ -22,7 +22,7 @@ function drawGrid(squaresPerSide) {
 
 // sets the height and width of elements of class square to a percentage
 function resizeSquares(percentage) {
-	squaresStyle.textContent = `.square {height: ${percentage}%; width: ${percentage}%;}`;
+	InternalCSS.textContent = `.square {height: ${percentage}%; width: ${percentage}%;}`;
 }
 
 // creates n divs of class square and appends them to grid after emptying it

@@ -12,19 +12,43 @@
 	<body>
 		<div id="homepage">
 			<div id="frame">
+				<h1 id="header">ETCH-A-SKETCH</h1>
 				<div id="grid"></div>
-				<div id="squares-input-container">
-					<label id="squares-input-label" for="squares-input"
-						>SQUARES PER SIDE:</label
-					>
-					<input
-						type="number"
-						id="squares-input"
-						name="squares-input"
-						min="16"
-						max="100"
-						value="16"
-					/>
+				<div id="inputs-container">
+					<div id="color-inputs-container">
+						<div class="color-container">
+							<button id="black-button" class="color-button"></button>
+							<label id="black-label">BLACK</label>
+						</div>
+						<div class="color-container">
+							<button id="rainbow-button" class="color-button"></button>
+							<label id="rainbow-label">RAINBOW</label>
+						</div>
+						<div class="color-container">
+							<div id="pick-color-button" class="color-button">
+								<input type="color" value="#ffff00" id="color-picker" />
+							</div>
+							<label id="pick-color-label">PICK</label>
+						</div>
+						<div class="color-container">
+							<button id="eraser-button" class="color-button"></button>
+							<label id="eraser-label">ERASER</label>
+						</div>
+					</div>
+					<button id="clear-button">CLEAR</button>
+					<div id="squares-input-container">
+						<label id="squares-input-label" for="squares-input"
+							>SQUARES PER SIDE:</label
+						>
+						<input
+							type="number"
+							id="squares-input"
+							name="squares-input"
+							min="16"
+							max="100"
+							value="32"
+						/>
+					</div>
 				</div>
 			</div>
 		</div>
