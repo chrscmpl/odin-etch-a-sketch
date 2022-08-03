@@ -42,8 +42,6 @@ body {
 }
 
 .square {
-	height: 6.25%;
-	width: 6.25%;
 	box-sizing: border-box;
 	margin: 0%;
 	background-color: white;
@@ -67,7 +65,7 @@ body {
 }
 
 #squares-input {
-	width: 16%;
+	width: 17%;
 	background-color: rgb(79, 0, 0);
 	color: white;
 	font-size: 30px;
