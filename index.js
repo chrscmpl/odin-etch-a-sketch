@@ -16,10 +16,9 @@ init();
 
 // event listener that calls the drawGrid function after the number input is changed
 squaresInput.addEventListener('change', e => {
-	const value = +e.target.value;
-	if (value > +e.target.max) e.target.value = e.target.max;
-	if (value < +e.target.min) e.target.value = e.target.min;
-	drawGrid(value);
+	if (+e.target.value > +e.target.max) e.target.value = e.target.max;
+	if (+e.target.value < +e.target.min) e.target.value = e.target.min;
+	drawGrid(+e.target.value);
 });
 
 // event listener that changes the currently selected color
